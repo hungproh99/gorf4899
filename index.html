@@ -42,12 +42,12 @@
             <header class="row tm-welcome-section">
                 <h2 class="col-12 text-center tm-section-title">Welcome to My Website</h2>
             </header>
-            <h3 class="col-10 text-center tm-section-title">My Favorite Food</h3>
+            <h3 class="col-10 text-center tm-section-title">Food Is My Life</h3>
             <div class="tm-paging-links">
                 <nav>
                     <ul>
                         <li class="tm-paging-item"><a href="#" class="tm-paging-link active">Noodle</a></li>
-                        <li class="tm-paging-item"><a href="#" class="tm-paging-link">Fries Rice</a></li>
+                        <li class="tm-paging-item"><a href="#" class="tm-paging-link">Fries-Rice</a></li>
                     </ul>
                 </nav>
             </div>
@@ -92,7 +92,7 @@
                 <!-- gallery page 1 -->
 
                 <!-- gallery page 2 -->
-                <div id="tm-gallery-page-fries" class="tm-gallery-page hidden">
+                <div id="tm-gallery-page-fries-rice" class="tm-gallery-page hidden">
                     <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
                         <figure>
                             <img src="img/gallery/05.jpg" alt="Image" class="img-fluid tm-gallery-img" />
@@ -135,6 +135,19 @@
     </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/parallax.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Handle click on paging links
+            $('.tm-paging-link').click(function(e) {
+                e.preventDefault();
+                var page = $(this).text().toLowerCase();
+                $('.tm-gallery-page').addClass('hidden');
+                $('#tm-gallery-page-' + page).removeClass('hidden');
+                $('.tm-paging-link').removeClass('active');
+                $(this).addClass("active");
+            });
+        });
+    </script>
 </body>
 
 </html>
