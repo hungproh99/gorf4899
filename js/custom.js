@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>About Hung</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" />
-    <link href="css/all.min.css" rel="stylesheet" />
-    <link href="css/templatemo-style.css" rel="stylesheet" />
-    <script>
         function includeHTML() {
             var z, i, elmnt, file, xhttp;
             /*loop through a collection of all HTML elements:*/
@@ -41,30 +29,3 @@
                 }
             }
         };
-    </script>
-
-    <body>
-</head>
-
-<body>
-
-    <div class="container">
-
-            <div include-html="topbar.html"></div>
-
-        <main>
-            <header class="row tm-welcome-section">
-                <h2 class="col-12 text-center tm-section-title">About Me</h2>
-            </header>
-            <div class="col-12 text-center">Nothing</div>
-        </main>
-
-        <footer class="tm-footer text-center">
-            <p>Nguyễn Đức Hùng</p>
-        </footer>
-    </div>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/parallax.min.js"></script>
-</body>
-
-</html>

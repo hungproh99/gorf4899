@@ -8,130 +8,143 @@
     <title>Nguyen Duc Hung</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />
     <link href="css/templatemo-style.css" rel="stylesheet" />
+    <script>
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /*loop through a collection of all HTML elements:*/
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain atrribute:*/
+                file = elmnt.getAttribute("include-html");
+                if (file) {
+                    /*make an HTTP request using the attribute value as the file name:*/
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) {
+                                elmnt.innerHTML = this.responseText;
+                            }
+                            if (this.status == 404) {
+                                elmnt.innerHTML = "Page not found.";
+                            }
+                            /*remove the attribute, and call this function once more:*/
+                            elmnt.removeAttribute("include-html");
+                            includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /*exit the function:*/
+                    return;
+                }
+            }
+        };
+    </script>
+
+    <body>
 </head>
 
 <body>
 
     <div class="container">
-        <!-- Top box -->
-        <!-- Logo & Site Name -->
-        <div class="placeholder">
-            <div class="parallax-window" data-parallax="scroll" data-image-src="img/image.jpg">
-                <div class="tm-header">
-                    <div class="row tm-header-inner">
-                        <div class="col-md-6 col-12">
-                            <img src="img/image1.png" alt="Logo" class="tm-site-logo" />
-                            <div class="tm-site-text-box">
-                                <h1 class="tm-site-title">Nguyễn Đức Hùng</h1>
-                                <h6 class="tm-site-description">(Hùng Ếch)</h6>
-                            </div>
-                        </div>
-                        <nav class="col-md-6 col-12 tm-nav">
-                            <ul class="tm-nav-ul">
-                                <li class="tm-nav-li"><a href="www.thegorf.tk" class="tm-nav-link active">Home</a></li>
-                                <li class="tm-nav-li"><a href="about.html" class="tm-nav-link">About</a></li>
-                                <li class="tm-nav-li"><a href="contact.html" class="tm-nav-link">Contact</a></li>
-                            </ul>
-                        </nav>
+
+            <div include-html="topbar.html"></div>
+
+            <main>
+                <header class="row tm-welcome-section">
+                    <h2 class="col-12 text-center tm-section-title">Welcome to My Website</h2>
+                </header>
+                <h3 class="col-10 text-center tm-section-title">Food Is My Life</h3>
+                <div class="tm-paging-links">
+                    <nav>
+                        <ul>
+                            <li class="tm-paging-item"><a href="#" class="tm-paging-link active">Noodle</a></li>
+                            <li class="tm-paging-item"><a href="#" class="tm-paging-link">Fries-Rice</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Gallery -->
+                <div class="row tm-gallery">
+                    <!-- gallery page 1 -->
+                    <div id="tm-gallery-page-noodle" class="tm-gallery-page">
+                        <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+                            <figure>
+                                <img src="img/gallery/01.jpg" alt="Image" class="img-fluid tm-gallery-img" />
+                                <figcaption>
+                                    <h4 class="tm-gallery-title">Bánh Đa Cua</h4>
+                                </figcaption>
+                            </figure>
+                        </article>
+                        <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+                            <figure>
+                                <img src="img/gallery/02.jpg" alt="Image" class="img-fluid tm-gallery-img" />
+                                <figcaption>
+                                    <h4 class="tm-gallery-title">Bún Cá</h4>
+                                </figcaption>
+                            </figure>
+                        </article>
+                        <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+                            <figure>
+                                <img src="img/gallery/03.jpg" alt="Image" class="img-fluid tm-gallery-img" />
+                                <figcaption>
+                                    <h4 class="tm-gallery-title">Phở</h4>
+                                </figcaption>
+                            </figure>
+                        </article>
+                        <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+                            <figure>
+                                <img src="img/gallery/04.jpg" alt="Image" class="img-fluid tm-gallery-img" />
+                                <figcaption>
+                                    <h4 class="tm-gallery-title">Bún Đậu Mắm Tôm</h4>
+                                </figcaption>
+                            </figure>
+                        </article>
                     </div>
-                </div>
-            </div>
-        </div>
+                    <!-- gallery page 1 -->
 
-        <main>
-            <header class="row tm-welcome-section">
-                <h2 class="col-12 text-center tm-section-title">Welcome to My Website</h2>
-            </header>
-            <h3 class="col-10 text-center tm-section-title">Food Is My Life</h3>
-            <div class="tm-paging-links">
-                <nav>
-                    <ul>
-                        <li class="tm-paging-item"><a href="#" class="tm-paging-link active">Noodle</a></li>
-                        <li class="tm-paging-item"><a href="#" class="tm-paging-link">Fries-Rice</a></li>
-                    </ul>
-                </nav>
-            </div>
-
-            <!-- Gallery -->
-            <div class="row tm-gallery">
-                <!-- gallery page 1 -->
-                <div id="tm-gallery-page-noodle" class="tm-gallery-page">
-                    <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-                        <figure>
-                            <img src="img/gallery/01.jpg" alt="Image" class="img-fluid tm-gallery-img" />
-                            <figcaption>
-                                <h4 class="tm-gallery-title">Bánh Đa Cua</h4>
-                            </figcaption>
-                        </figure>
-                    </article>
-                    <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-                        <figure>
-                            <img src="img/gallery/02.jpg" alt="Image" class="img-fluid tm-gallery-img" />
-                            <figcaption>
-                                <h4 class="tm-gallery-title">Bún Cá</h4>
-                            </figcaption>
-                        </figure>
-                    </article>
-                    <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-                        <figure>
-                            <img src="img/gallery/03.jpg" alt="Image" class="img-fluid tm-gallery-img" />
-                            <figcaption>
-                                <h4 class="tm-gallery-title">Phở</h4>
-                            </figcaption>
-                        </figure>
-                    </article>
-                    <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-                        <figure>
-                            <img src="img/gallery/04.jpg" alt="Image" class="img-fluid tm-gallery-img" />
-                            <figcaption>
-                                <h4 class="tm-gallery-title">Bún Đậu Mắm Tôm</h4>
-                            </figcaption>
-                        </figure>
-                    </article>
+                    <!-- gallery page 2 -->
+                    <div id="tm-gallery-page-fries-rice" class="tm-gallery-page hidden">
+                        <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+                            <figure>
+                                <img src="img/gallery/05.jpg" alt="Image" class="img-fluid tm-gallery-img" />
+                                <figcaption>
+                                    <h4 class="tm-gallery-title">Cơm Rang Cải Bò</h4>
+                                </figcaption>
+                            </figure>
+                        </article>
+                        <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+                            <figure>
+                                <img src="img/gallery/06.jpg" alt="Image" class="img-fluid tm-gallery-img" />
+                                <figcaption>
+                                    <h4 class="tm-gallery-title">Cơm Rang Hải Sản</h4>
+                                </figcaption>
+                            </figure>
+                        </article>
+                        <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+                            <figure>
+                                <img src="img/gallery/07.jpg" alt="Image" class="img-fluid tm-gallery-img" />
+                                <figcaption>
+                                    <h4 class="tm-gallery-title">Cơm Rang Dưa Bò</h4>
+                                </figcaption>
+                            </figure>
+                        </article>
+                        <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+                            <figure>
+                                <img src="img/gallery/08.jpg" alt="Image" class="img-fluid tm-gallery-img" />
+                                <figcaption>
+                                    <h4 class="tm-gallery-title">Cơm Rang Gà Xé</h4>
+                                </figcaption>
+                            </figure>
+                        </article>
+                    </div>
+                    <!-- gallery page 2 -->
                 </div>
-                <!-- gallery page 1 -->
-
-                <!-- gallery page 2 -->
-                <div id="tm-gallery-page-fries-rice" class="tm-gallery-page hidden">
-                    <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-                        <figure>
-                            <img src="img/gallery/05.jpg" alt="Image" class="img-fluid tm-gallery-img" />
-                            <figcaption>
-                                <h4 class="tm-gallery-title">Cơm Rang Cải Bò</h4>
-                            </figcaption>
-                        </figure>
-                    </article>
-                    <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-                        <figure>
-                            <img src="img/gallery/06.jpg" alt="Image" class="img-fluid tm-gallery-img" />
-                            <figcaption>
-                                <h4 class="tm-gallery-title">Cơm Rang Hải Sản</h4>
-                            </figcaption>
-                        </figure>
-                    </article>
-                    <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-                        <figure>
-                            <img src="img/gallery/07.jpg" alt="Image" class="img-fluid tm-gallery-img" />
-                            <figcaption>
-                                <h4 class="tm-gallery-title">Cơm Rang Dưa Bò</h4>
-                            </figcaption>
-                        </figure>
-                    </article>
-                    <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-                        <figure>
-                            <img src="img/gallery/08.jpg" alt="Image" class="img-fluid tm-gallery-img" />
-                            <figcaption>
-                                <h4 class="tm-gallery-title">Cơm Rang Gà Xé</h4>
-                            </figcaption>
-                        </figure>
-                    </article>
-                </div>
-                <!-- gallery page 2 -->
-            </div>
-        </main>
-        <footer class="tm-footer text-center">
-            <p>Nguyễn Đức Hùng</p>
-        </footer>
+            </main>
+            <footer class="tm-footer text-center">
+                <p>Nguyễn Đức Hùng</p>
+            </footer>
     </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/parallax.min.js"></script>
@@ -148,6 +161,6 @@
             });
         });
     </script>
-</body>
+    </body>
 
 </html>
