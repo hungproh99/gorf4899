@@ -9,48 +9,35 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" />
     <link href="css/all.min.css" rel="stylesheet" />
     <link href="css/templatemo-style.css" rel="stylesheet" />
-    <script>
-        function includeHTML() {
-            var z, i, elmnt, file, xhttp;
-            /*loop through a collection of all HTML elements:*/
-            z = document.getElementsByTagName("*");
-            for (i = 0; i < z.length; i++) {
-                elmnt = z[i];
-                /*search for elements with a certain atrribute:*/
-                file = elmnt.getAttribute("include-html");
-                if (file) {
-                    /*make an HTTP request using the attribute value as the file name:*/
-                    xhttp = new XMLHttpRequest();
-                    xhttp.onreadystatechange = function() {
-                        if (this.readyState == 4) {
-                            if (this.status == 200) {
-                                elmnt.innerHTML = this.responseText;
-                            }
-                            if (this.status == 404) {
-                                elmnt.innerHTML = "Page not found.";
-                            }
-                            /*remove the attribute, and call this function once more:*/
-                            elmnt.removeAttribute("include-html");
-                            includeHTML();
-                        }
-                    }
-                    xhttp.open("GET", file, true);
-                    xhttp.send();
-                    /*exit the function:*/
-                    return;
-                }
-            }
-        };
-    </script>
-
-    <body>
 </head>
 
 <body>
 
     <div class="container">
-
-        <div include-html="topbar.html"></div>
+        <!-- Top box -->
+        <!-- Logo & Site Name -->
+        <div class="placeholder">
+            <div class="parallax-window" data-parallax="scroll" data-image-src="img/image.jpg">
+                <div class="tm-header">
+                    <div class="row tm-header-inner">
+                        <div class="col-md-6 col-12">
+                            <img src="img/image1.png" alt="Logo" class="tm-site-logo" />
+                            <div class="tm-site-text-box">
+                                <h1 class="tm-site-title">Nguyen Duc Hung</h1>
+                                <h6 class="tm-site-description">(Hùng Ếch)</h6>
+                            </div>
+                        </div>
+                        <nav class="col-md-6 col-12 tm-nav">
+                            <ul class="tm-nav-ul">
+                                <li class="tm-nav-li"><a href="index.html" class="tm-nav-link">Home</a></li>
+                                <li class="tm-nav-li"><a href="about.html" class="tm-nav-link active">About</a></li>
+                                <li class="tm-nav-li"><a href="contact.html" class="tm-nav-link">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <main>
             <header class="row tm-welcome-section">
